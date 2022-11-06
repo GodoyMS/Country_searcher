@@ -1,3 +1,5 @@
+
+//Details per country
 const country_details=document.getElementById("country-details");
 const API_COUNTRY_URL="https://restcountries.com/v3.1/name";
 
@@ -66,7 +68,7 @@ function countryData(nameCountry){fetch(`${API_COUNTRY_URL}/${nameCountry}`)
 
 }
 
-
+//Routing
 
 const routerFunction=(location)=>{
 
@@ -91,6 +93,7 @@ window.addEventListener("hashchange",()=>{
 
 
 
+//Home cards- all countries
 
 function mainData(){fetch(`${API_URL}/v3.1/all`)
     .then((response)=>response.json())
@@ -117,13 +120,6 @@ function mainData(){fetch(`${API_URL}/v3.1/all`)
             let button=document.createElement('p');
             button.setAttribute("href",`{}`);
             button.innerHTML=`<a href="${location}_details_${element.name.common}">Ver más</a>`;
-            
-
-
-
-
-            
-            
             
 
             card.appendChild(tittle);
