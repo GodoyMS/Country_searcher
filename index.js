@@ -26,19 +26,20 @@ function countryData(nameCountry){fetch(`${API_COUNTRY_URL}/${nameCountry}`)
                 capital1.innerText=`Capital: ${data1[0].capital}`;
                 div1.appendChild(capital1);
 
-                let imagen2=document.createElement('img');
-                imagen2.setAttribute("src",`${data1[0].coatOfArms.png}`);
-                imagen2.setAttribute("Alt","Imagen");
-                imagen2.style.width="200px";
-                imagen2.style.height="auto";
                 
-                div2.appendChild(imagen2);
+                
 
                 let language=document.createElement('p');
-                language.innerText=`Language: ${data1[0].languages}`;
+                let languages_values=Object.values(data1[0].languages).join(", ");             
+                language.innerText=`Language(s): ${languages_values}`;
                 div2.appendChild(language);
 
+                let currency=document.createElement('p');
                 
+                let currency_value=Object.values(data1[0].currencies)[0];
+               
+                currency.innerText=`Currency: ${currency_value.name} ${currency_value.symbol}`;
+                div2.appendChild(currency);
 
                 let region=document.createElement('p');
                 region.innerText=`Region: ${data1[0].region}`
@@ -51,14 +52,6 @@ function countryData(nameCountry){fetch(`${API_COUNTRY_URL}/${nameCountry}`)
                 let time =document.createElement('p');
                 time.innerText=`Time: ${data1[0].timezones}`
                 div3.appendChild(time);
-
-
-
-
-
-                
-
-
 
                 country_details.appendChild(div1);
                 country_details.appendChild(div2);
@@ -79,13 +72,6 @@ const routerFunction=(location)=>{
 
     let [,nameCountry]=location.split('details_');
     countryData(nameCountry);
-
-
-
-    
-
-
-   
 
 }
 const API_URL="https://restcountries.com";
