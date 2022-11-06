@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick Hand">
+
+    <title>Buscador de paises </title>
+</head>
+<body>
+    <a href="index.html"><h1 >GODOY MUÑOZ 🤠</h1></a>
+    <h1 >APP BUSCADOR DE PAISES</h1>
+    <div id="country-details">
+        <button style="padding:1rem; position:absolute"><a href="index.html" >Volver a Home</a></button>
+        
+    </div>
+
+    
+    <div class="search" >
+        <div class="search-bar">
+
+        
+        <img class="icon" src="icon_search.svg" alt="search_country" style="width:50px; height:50px;">
+        <input onkeyup="search_country()" placeholder= "Escribir un pais, región, capital o población" type="search" name="searchbar" id="searchbar" class="searchBox">
+        
+        
+
+        </div>
+    
+        
+    
+        <div class="filter">
+            
+            <ul class="ul-filter"> <a >Filtrar regiones  🡳</a>
+                
+                <li><a href="#" id="todos" onclick="todos()" >Todos</a></li>
+                <li><a href="#" id="africa" onclick="africa()" >Africa</a></li>
+                <li><a href="#" id="americas" onclick="americas()" >Americas</a></li>
+                <li><a href="#" id="europa" onclick="europa()">Europa</a></li>
+                <li><a href="#" id="oceania"onclick="oceania()">Oceania</a></li>
+                <li><a href="#" id="asia" onclick="asia()">Asia</a></li>
+                
+    
+            </ul>
+
+        </div>
+    </div>
+    
+   
+    <div id="countries" >
+
+    </div>
+    <div class="wordSearch"></div>
+    <script src="./index.js"></script>
+    <script src="./search.js"></script>
+        
+    <script src="./filtros.js"> 
+
+
+        
+    </script>
+
+
+</body>
+</html>
